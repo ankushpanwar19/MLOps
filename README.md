@@ -68,5 +68,38 @@ To create a similar project structure, use below commands:
     pip install cookiecutter
     cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
 
+## ML flow tracking:
+The MLflow Tracking component is an API and UI for logging parameters, code versions, metrics, and output files when running your machine learning code and for later visualizing the results. MLflow Tracking lets you log and query experiments. MLflow tracking tutorial.
 
+Example : You can check the MLflow tracking in src/train.py. or You can refer [MLflow tracking tutorial](https://link-url-here.org)
+
+     with mlflow.start_run() as run:
+        <Training code>
+        
+        # Track Parameters
+        mlflow.log_param("learning_rate", args.lr)
+
+        #  Track metrics
+        mlflow.log_metric("test_loss", test_loss)
+        mlflow.log_metric("test_accuracy", test_accuracy)
+        
+        # Track model
+        mlflow.pytorch.log_model(model, "classifier")
+
+        # Save model artifact
+        model_save_dir = "models/mnist_cnn.pt"
+        torch.save(model.state_dict(), model_save_dir)
+        mlflow.log_artifact(model_save_dir)
+
+Once you run the `python src/train.py` file, MLflow tracking will create mlruns folder. MLflow organises ML tracking into experiments and runs. An Experiment (default:0) is created to deal with a particular task and multiple runs (named:run_id) are performed under experiment.
+
+mlruns folder structure:
+
+    ├── <Experiment_id>
+        ├── <run_id>
+            ├── artifacts   <- Stores models,features, enivorment file etc
+            ├── metrics     <- Stores metric like accuracy
+            ├── params      <- Stores hyperparameters
+            ├── tags        <- contains mlflow run info, github commit hash etc  
+            ├── meta.yaml   <- run info
 
