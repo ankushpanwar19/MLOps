@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ankushpanwar/Downloads/privatelyeu/Personal_modules/MLOps/mlruns/0/ca2d342b88e54f9480db329083845f65/artifacts
+end_time: 1674045963005
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ca2d342b88e54f9480db329083845f65
+run_name: lyrical-mule-945
+run_uuid: ca2d342b88e54f9480db329083845f65
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674045747830
+status: 3
+tags: []
+user_id: ankushpanwar

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ankushpanwar/Downloads/privatelyeu/Personal_modules/MLOps/mlruns/0/3e69f95c57174ccead5ad3ff9dc32b16/artifacts
+end_time: 1674044642524
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3e69f95c57174ccead5ad3ff9dc32b16
+run_name: hilarious-chimp-812
+run_uuid: 3e69f95c57174ccead5ad3ff9dc32b16
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674044600263
+status: 3
+tags: []
+user_id: ankushpanwar

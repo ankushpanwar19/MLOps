@@ -3,6 +3,7 @@ Script to create custome machine learning models using pytorch
 """
 from torch import nn
 import torch.nn.functional as F
+from torch import flatten
 
 
 class MnistNet(nn.Module):
@@ -30,7 +31,7 @@ class MnistNet(nn.Module):
         x = F.relu(x)
         x = F.max_pool2d(x, 2)
         x = self.dropout1(x)
-        x = nn.Flatten(x, 1)
+        x = flatten(x, 1)
         x = self.fc1(x)
         x = F.relu(x)
         x = self.dropout2(x)

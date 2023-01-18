@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ankushpanwar/Downloads/privatelyeu/Personal_modules/MLOps/mlruns/0/35de37283ef84e1b92c72b002d0e7530/artifacts
+end_time: 1674044718566
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 35de37283ef84e1b92c72b002d0e7530
+run_name: casual-skunk-462
+run_uuid: 35de37283ef84e1b92c72b002d0e7530
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674044676180
+status: 3
+tags: []
+user_id: ankushpanwar
