@@ -3,6 +3,12 @@ MLOps
 
 To create MLOps pipeline for neural machine learning project using tool such as mlflow, dvc etc
 
+Environment creation
+------------
+    conda create -n mlops python=3.8 
+    conda activate mlops
+    pip install -r requirements.txt
+
 Project Organization
 ------------
 
@@ -55,3 +61,12 @@ Project Organization
 --------
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+
+To create a similar project structure, use below commands:
+
+
+    pip install cookiecutter
+    cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
+
+
+
