@@ -103,3 +103,17 @@ mlruns folder structure:
             ├── tags        <- contains mlflow run info, github commit hash etc  
             ├── meta.yaml   <- run info
 
+Execute below command to run the experiment :
+
+    python src/train.py
+
+You could also visualize the mlruns folder with a UI:
+   
+    mlflow ui
+
+This will create a localhost link for the dashboard where you can compare different runs based on logged performance metrics:
+    
+![alt text](reports/figures/Screenshot%202023-01-18%20at%203.56.56%20PM.png)
+
+We can also create a [tracking server](https://mlflow.org/docs/latest/tracking.html#scenario-4-mlflow-with-remote-tracking-server-backend-and-artifact-stores) instead of using a localhost.
+
