@@ -87,3 +87,6 @@ target/
 
 # Mypy cache
 .mypy_cache/
+
+# exclude mlruns folder
+mlruns/966661054792769368/

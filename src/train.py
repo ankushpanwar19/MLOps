@@ -78,9 +78,16 @@ def main():
     optimizer = optim.Adadelta(model.parameters(), lr=args.lr)
     scheduler = StepLR(optimizer, step_size=1, gamma=args.gamma)
 
-    # EXPERIMENT_NAME = "MNIST_mlflow_demo"
-    # EXPERIMENT_ID = mlflow.create_experiment(EXPERIMENT_NAME)
-    with mlflow.start_run() as run:
+    
+    EXPERIMENT_NAME = "MNIST_mlflow_demo"
+
+    existing_exp = mlflow.get_experiment_by_name(EXPERIMENT_NAME)
+    if not existing_exp:
+        EXPERIMENT_ID = mlflow.create_experiment(EXPERIMENT_NAME)
+    
+    mlflow.set_experiment(EXPERIMENT_NAME)
+
+    with mlflow.start_run( run_name="Hyperparameter_optimize") as run:
         for epoch in range(1, args.epochs + 1):
             trainer.train(args, train_loader, optimizer, epoch)
             test_loss, test_accuracy = trainer.test(test_loader)
@@ -89,6 +96,8 @@ def main():
             mlflow.log_metric("test_accuracy", test_accuracy,step=epoch)
             scheduler.step()
 
+        
+        # Track parameter
         mlflow.log_param("learning_rate", args.lr)
         mlflow.log_param("gamma", args.gamma)
         mlflow.log_param("epoch", args.epochs)
@@ -104,9 +113,6 @@ def main():
         model_save_dir = "models/mnist_cnn.pt"
         torch.save(model.state_dict(), model_save_dir)
         mlflow.log_artifact(model_save_dir)
-
-    # if args.save_model:
-    #     torch.save(model.state_dict(), "mnist_cnn.pt")
 
 
 if __name__ == "__main__":
